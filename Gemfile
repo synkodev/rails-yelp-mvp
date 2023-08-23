@@ -27,6 +27,15 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+# Add simple form
+gem "simple_form"
+
+# Use the Faker random generator
+gem "faker"
+
+# To add icons
+gem "font-awesome-sass", "~> 6.4.2"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

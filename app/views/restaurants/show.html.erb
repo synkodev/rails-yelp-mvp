@@ -1,0 +1,29 @@
+<h1>Restaurant Info</h1>
+<div class="card shadow rounded p-3 my-3" >
+  <h3><%= @restaurant.name %></h2>
+
+  <p>Address: <%= @restaurant.address %></p>
+  <p>Category: <%= @restaurant.category.capitalize %></p>
+  <p>Contact: <%= @restaurant.phone_number %></p>
+
+  <h5>Reviews</h5>
+
+  <ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li>
+      <p><%= review.content %></p>
+      <p>Rating:
+        <% review.rating.times do %>
+          <i class="fa fa-solid fa-star" style="color: #ffdd00;"></i>
+        <% end %>
+        <% (5-review.rating).times do %>
+          <i class="fa fa-regular fa-star" style="border-color: #ffdd00;"></i>
+        <% end %>
+      </p>
+    </li>
+  <% end %>
+  </ul>
+
+  <%= link_to 'Submit a review 📋', new_restaurant_review_path(@restaurant), class: 'btn btn-info text-white' %>
+</div>
+<%= link_to '⬅️ Back', restaurants_path, class: 'btn btn-info text-white' %>
